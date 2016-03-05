@@ -1,0 +1,117 @@
+[gd_scene load_steps=6 format=1]
+
+[ext_resource path="res://Scenes/chat.gd" type="Script" id=1]
+[ext_resource path="res://png/quadrato.png" type="Texture" id=2]
+[ext_resource path="res://Font/linear.fnt" type="Font" id=3]
+
+[sub_resource type="StyleBoxFlat" id=1]
+
+content_margin/left = 10.0
+content_margin/right = -1.0
+content_margin/top = 10.0
+content_margin/bottom = -1.0
+bg_color = Color( 0, 0, 0, 1 )
+light_color = Color( 1, 1, 1, 1 )
+dark_color = Color( 1, 1, 1, 1 )
+border_size = 1
+border_blend = true
+draw_bg = true
+
+[sub_resource type="StyleBoxFlat" id=2]
+
+content_margin/left = -1.0
+content_margin/right = -1.0
+content_margin/top = -1.0
+content_margin/bottom = -1.0
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+light_color = Color( 1, 1, 1, 1 )
+dark_color = Color( 1, 1, 1, 1 )
+border_size = 1
+border_blend = true
+draw_bg = true
+
+[node name="Chat" type="Node2D"]
+
+script/script = ExtResource( 1 )
+__meta__ = { "__editor_plugin_screen__":"Script" }
+
+[node name="pnlChat" type="Patch9Frame" parent="."]
+
+margin/left = 57.0
+margin/top = 56.0
+margin/right = 916.0
+margin/bottom = 485.0
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+texture = ExtResource( 2 )
+patch_margin/left = 5
+patch_margin/top = 5
+patch_margin/right = 5
+patch_margin/bottom = 5
+
+[node name="txtSend" type="LineEdit" parent="pnlChat"]
+
+margin/left = 26.0
+margin/top = 342.0
+margin/right = 744.0
+margin/bottom = 397.0
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+custom_styles/normal = SubResource( 1 )
+custom_fonts/font = ExtResource( 3 )
+text = ""
+max_length = 0
+editable = true
+secret = false
+
+[node name="btnSend" type="Button" parent="pnlChat"]
+
+margin/left = 778.0
+margin/top = 347.0
+margin/right = 824.0
+margin/bottom = 391.0
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+custom_styles/normal = SubResource( 2 )
+custom_fonts/font = ExtResource( 3 )
+toggle_mode = false
+text = ">"
+flat = false
+
+[node name="btnExit" type="Button" parent="pnlChat"]
+
+margin/left = 816.0
+margin/top = -20.0
+margin/right = 870.0
+margin/bottom = 24.0
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+custom_fonts/font = ExtResource( 3 )
+toggle_mode = false
+text = "X"
+flat = true
+
+[node name="rtbChat" type="RichTextLabel" parent="pnlChat"]
+
+margin/left = 25.0
+margin/top = 20.0
+margin/right = 824.0
+margin/bottom = 328.0
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+custom_fonts/normal_font = ExtResource( 3 )
+bbcode/enabled = true
+bbcode/bbcode = ""
+visible_characters = -1
+
+

@@ -1,0 +1,72 @@
+[gd_scene load_steps=5 format=1]
+
+[ext_resource path="res://png/quadrato.png" type="Texture" id=1]
+[ext_resource path="res://Scenes/msg.gd" type="Script" id=2]
+[ext_resource path="res://Font/linear.fnt" type="Font" id=3]
+
+[sub_resource type="StyleBoxFlat" id=1]
+
+content_margin/left = -1.0
+content_margin/right = -1.0
+content_margin/top = -1.0
+content_margin/bottom = -1.0
+bg_color = Color( 0, 0, 0, 1 )
+light_color = Color( 1, 1, 1, 1 )
+dark_color = Color( 1, 1, 1, 1 )
+border_size = 1
+border_blend = true
+draw_bg = true
+
+[node name="pnlMsg" type="Patch9Frame"]
+
+process/pause_mode = 2
+margin/left = 194.0
+margin/top = 62.0
+margin/right = 850.0
+margin/bottom = 477.0
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+texture = ExtResource( 1 )
+patch_margin/left = 5
+patch_margin/top = 5
+patch_margin/right = 5
+patch_margin/bottom = 5
+script/script = ExtResource( 2 )
+__meta__ = { "__editor_plugin_screen__":"2D" }
+
+[node name="lblMsg" type="RichTextLabel" parent="."]
+
+margin/left = 26.0
+margin/top = 40.0
+margin/right = 626.0
+margin/bottom = 324.0
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+custom_fonts/normal_font = ExtResource( 3 )
+bbcode/enabled = true
+bbcode/bbcode = ""
+visible_characters = -1
+
+[node name="btnOk" type="Button" parent="."]
+
+margin/left = 275.0
+margin/top = 347.0
+margin/right = 376.0
+margin/bottom = 393.0
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+custom_styles/normal = SubResource( 1 )
+custom_fonts/font = ExtResource( 3 )
+toggle_mode = false
+text = "OK"
+flat = false
+
+[connection signal="pressed" from="btnOk" to="." method="_on_btnOk_pressed"]
+
+

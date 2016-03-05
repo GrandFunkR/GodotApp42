@@ -1,0 +1,117 @@
+[gd_scene load_steps=6 format=1]
+
+[ext_resource path="res://Scenes/login.gd" type="Script" id=1]
+[ext_resource path="res://png/quadrato.png" type="Texture" id=2]
+[ext_resource path="res://Font/linear.fnt" type="Font" id=3]
+
+[sub_resource type="StyleBoxFlat" id=1]
+
+content_margin/left = 10.0
+content_margin/right = -1.0
+content_margin/top = 10.0
+content_margin/bottom = -1.0
+bg_color = Color( 0, 0, 0, 1 )
+light_color = Color( 1, 1, 1, 1 )
+dark_color = Color( 1, 1, 1, 1 )
+border_size = 1
+border_blend = true
+draw_bg = true
+
+[sub_resource type="StyleBoxFlat" id=2]
+
+content_margin/left = -1.0
+content_margin/right = -1.0
+content_margin/top = -1.0
+content_margin/bottom = -1.0
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+light_color = Color( 1, 1, 1, 1 )
+dark_color = Color( 1, 1, 1, 1 )
+border_size = 1
+border_blend = true
+draw_bg = true
+
+[node name="Login" type="Node2D"]
+
+script/script = ExtResource( 1 )
+__meta__ = { "__editor_plugin_screen__":"2D" }
+
+[node name="pnlLogin" type="Patch9Frame" parent="."]
+
+margin/left = 57.0
+margin/top = 56.0
+margin/right = 916.0
+margin/bottom = 485.0
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+texture = ExtResource( 2 )
+patch_margin/left = 5
+patch_margin/top = 5
+patch_margin/right = 5
+patch_margin/bottom = 5
+
+[node name="txtUsername" type="LineEdit" parent="pnlLogin"]
+
+margin/left = 354.0
+margin/top = 33.0
+margin/right = 786.0
+margin/bottom = 88.0
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+custom_styles/normal = SubResource( 1 )
+custom_fonts/font = ExtResource( 3 )
+text = ""
+max_length = 0
+editable = true
+secret = false
+
+[node name="Label" type="Label" parent="pnlLogin"]
+
+margin/left = 39.0
+margin/top = 34.0
+margin/right = 343.0
+margin/bottom = 86.0
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+custom_fonts/font = ExtResource( 3 )
+text = "username:"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="btnLogin" type="Button" parent="pnlLogin"]
+
+margin/left = 339.0
+margin/top = 343.0
+margin/right = 536.0
+margin/bottom = 387.0
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+custom_styles/normal = SubResource( 2 )
+custom_fonts/font = ExtResource( 3 )
+toggle_mode = false
+text = "login"
+flat = false
+
+[node name="btnExit" type="Button" parent="pnlLogin"]
+
+margin/left = 818.0
+margin/top = -17.0
+margin/right = 872.0
+margin/bottom = 27.0
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+custom_fonts/font = ExtResource( 3 )
+toggle_mode = false
+text = "X"
+flat = true
+
+
