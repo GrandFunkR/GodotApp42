@@ -15,7 +15,7 @@ https://www.youtube.com/watch?v=S49-c1B1J3k
 * edit file engine.cfg add
 ```
 [android]
-modules="com/android/godot/GodotGPS"
+modules="com/android/godot/App42Singleton"
 ```
 * Export->Target->Android
 ```
